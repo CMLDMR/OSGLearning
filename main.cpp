@@ -13,6 +13,7 @@ using namespace std;
 
 
 #include "monitoingtarget.h"
+#include "logfilehandler.h"
 
 
 
@@ -26,6 +27,10 @@ int main(int argc, char *argv[])
 {
 
 
+    osg::setNotifyLevel( osg::INFO );
+
+    osg::setNotifyHandler( new LogFileHandler("output.txt"));
+
     osg::ref_ptr<MonitoingTarget> target = new MonitoingTarget(0);
 
     std::cout << "Referenced count before reffering: " << target.get()->referenceCount() << std::endl;
@@ -35,6 +40,8 @@ int main(int argc, char *argv[])
     std::cout << "Referenced count before reffering: " << anothertarget.get()->referenceCount() << std::endl;
 
 
+
+    osg::ArgumentParser parser( &argc , argv );
 
     for( int i = 0 ; i < 5 ; i++ )
     {
@@ -48,19 +55,19 @@ int main(int argc, char *argv[])
 
 
 
-//    osg::ref_ptr<osg::Node> root = osgDB::readNodeFile("cessna.osg");
+    osg::ref_ptr<osg::Node> root = osgDB::readNodeFile("cessna.osg");
 
 
 
-//    osgViewer::Viewer viewer;
+    osgViewer::Viewer viewer;
 
 
 
-//    viewer.setSceneData( root.get() );
+    viewer.setSceneData( root.get() );
 
-//    viewer.setUpViewOnSingleScreen(0);
+    viewer.setUpViewOnSingleScreen(0);
 
-//    return viewer.run();
+    return viewer.run();
 
 
 

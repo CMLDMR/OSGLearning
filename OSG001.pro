@@ -15,7 +15,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        main.cpp
+        main.cpp \
+    monitoingtarget.cpp \
+    logfilehandler.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -29,5 +31,9 @@ win32: LIBS += -L$$PWD/OpenSceneGraph-3.4.0-VC2015-64-NoArch/lib/ -losg -lOpenTh
 
 INCLUDEPATH += $$PWD/OpenSceneGraph-3.4.0-VC2015-64-NoArch/include
 DEPENDPATH += $$PWD/OpenSceneGraph-3.4.0-VC2015-64-NoArch/include
+
+HEADERS += \
+    monitoingtarget.h \
+    logfilehandler.h
 
 
