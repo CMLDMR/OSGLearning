@@ -3,10 +3,22 @@
 
 #include <QtCore/qglobal.h>
 
-class LogFileHandler
+#include <osgDB/ReadFile>
+#include <osgViewer/Viewer>
+#include <fstream>
+
+class LogFileHandler : public osg::NotifyHandler
 {
 public:
-    LogFileHandler();
+    LogFileHandler(const std::string& file);
+
+    virtual ~LogFileHandler();
+
+    virtual void notify( osg::NotifySeverity severity , const char* msg);
+
+
+protected:
+    std::ofstream _log;
 };
 
 #endif // LOGFILEHANDLER_H
