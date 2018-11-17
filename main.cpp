@@ -67,7 +67,11 @@ int main(int argc, char *argv[])
 
 //    viewer.setSceneData( root.get() );
 
-    coloredQuad(&viewer);
+//    coloredQuad(&viewer);
+
+//    octohedron(&viewer);
+
+    tessellation(&viewer);
 
     viewer.setUpViewOnSingleScreen(0);
 
