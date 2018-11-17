@@ -34,6 +34,7 @@ DEPENDPATH += $$PWD/OpenSceneGraph-3.4.0-VC2015-64-NoArch/include
 
 HEADERS += \
     monitoingtarget.h \
-    logfilehandler.h
+    logfilehandler.h \
+    chapter04.h
 
 

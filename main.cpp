@@ -15,6 +15,8 @@ using namespace std;
 #include "monitoingtarget.h"
 #include "logfilehandler.h"
 
+#include "chapter04.h"
+
 
 
 MonitoingTarget* createMonitoringTarger( int index )
@@ -63,7 +65,9 @@ int main(int argc, char *argv[])
 
 
 
-    viewer.setSceneData( root.get() );
+//    viewer.setSceneData( root.get() );
+
+    coloredQuad(&viewer);
 
     viewer.setUpViewOnSingleScreen(0);
 
